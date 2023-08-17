@@ -1,0 +1,88 @@
+{
+    "best-cakes": [
+        {
+            "id": 1,
+            "code": "C-01",
+            "label": "Cake 1",
+            "price": 3,
+            "status": "ready",
+            "picture": "cake1.jpg"
+        },
+        {
+            "id": 2,
+            "code": "C-02",
+            "label": "Cake 2",
+            "price": 3.5,
+            "status": "ready",
+            "picture": "cake2.jpg"
+        },
+        {
+            "id": 4,
+            "code": "C-04",
+            "label": "Cake 4",
+            "price": 2.7,
+            "status": "ready",
+            "picture": "cake4.jpg"
+        },
+        {
+            "id": 6,
+            "code": "C-06",
+            "label": "Cake 6",
+            "price": 4,
+            "status": "ready",
+            "picture": "cake6.jpg"
+        }
+    ],
+    "all-cakes": [
+        {
+            "id": 1,
+            "code": "C-01",
+            "label": "Cake 1",
+            "price": 3,
+            "status": "ready",
+            "picture": "cake1.jpg"
+        },
+        {
+            "id": 2,
+            "code": "C-02",
+            "label": "Cake 2",
+            "price": 3.5,
+            "status": "ready",
+            "picture": "cake2.jpg"
+        },
+        {
+            "id": 3,
+            "code": "C-03",
+            "label": "Cake 3",
+            "price": 3.5,
+            "status": "ready",
+            "picture": "cake3.jpg"
+        },
+        {
+            "id": 4,
+            "code": "C-04",
+            "label": "Cake 4",
+            "price": 2.7,
+            "status": "ready",
+            "picture": "cake4.jpg"
+        },
+        {
+            "id": 5,
+            "code": "C-05",
+            "label": "Cake 5",
+            "price": 4.2,
+            "status": "ready",
+            "picture": "cake5.jpg"
+        },
+        {
+            "id": 6,
+            "code": "C-06",
+            "label": "Cake 6",
+            "price": 4,
+            "status": "ready",
+            "picture": "cake6.jpg"
+        }
+    ],
+    "cart":[],
+    "order":[]
+}

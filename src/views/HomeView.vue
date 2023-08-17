@@ -3,51 +3,70 @@
     <Navbar />
     <div class="body d-flex justify-content-md-center align-items-center">
       <div class="container my-5">
-        <div class="row align-items-start">
-          <div class="col">
-            <div class="mx-3">
+
+        <!-- Desktop -->
+        <div class="d-none d-md-block">
+          <div class="row align-items-start">
+            <div class="col-md-6">
+              <div class="mx-3">
+                <hr>
+                <h2>Welcome to <span class="text-success">Culinary-Haven</span>!</h2>
+                <p>Embark on a culinary journey with our exquisite dishes that promise to delight your taste buds. Savory
+                  indulgence awaits!</p>
+                <h5 class="fs-6">Start Your First Order.</h5>
+                <button class="btn btn-success"> → ORDER</button>
+              </div>
               <hr>
-              <h2 class="text-success">Savory Delights Up Next!</h2>
-              <p>Embark on a culinary journey with our exquisite dishes that promise to delight your taste buds. Savory
-                indulgence awaits!</p>
-              <h5 class="fs-6">Start Your First Order.</h5>
-              <button class="btn btn-success"> → ORDER</button>
             </div>
-            <hr>
-          </div>
-          <div class="col">
-            <div class="d-flex justify-content-center">
-              <div id="carouselExampleInterval" class="carousel slide w-50" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="1000">
-                    <img src="https://i.postimg.cc/BnXFfWCD/logo-CH-2-0.png" class="d-block" width="270px" height="270px"
-                      alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://i.postimg.cc/xC4Z1Vzm/logo-CH-2-1.png" class="d-block" width="270px" height="270px"
-                      alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://i.postimg.cc/Th8HnjQY/logo-CH-2-2.png" class="d-block" width="270px" height="270px"
-                      alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+            <div class="col-md-6">
+              <div class="d-flex justify-content-center">
+                <img src="https://i.postimg.cc/bYKfGfnz/watering-plant-4.png" alt="" class="w-75 h-max ml-5">
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Mobile -->
+        <div class="body2 d-sm-block d-md-none">
+          <div class="row align-items-start">
+            <div class="col-md-6 mt-3">
+              <div class="d-flex justify-content-center ml-5">
+                <img src="https://i.postimg.cc/bYKfGfnz/watering-plant-4.png" alt="" class="w-75 h-75 ml-5">
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="mx-3">
+                <hr>
+                <h2 class="text-success">Welcome to Culinary Haven!</h2>
+                <p>Embark on a culinary journey with our exquisite dishes that promise to delight your taste buds. Savory
+                  indulgence awaits!</p>
+                <h5 class="fs-6">Start Your First Order.</h5>
+                <button class="btn btn-success"> → ORDER</button>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col">
+            <h2 class="mx-3">Recommended <span class="fw-bolder text-info-emphasis">Food</span><a href=""
+                class="btn btn-success float-end"><i class='fa fa-list-ul'></i> More List</a></h2>
+            <hr>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-3 mt-4" v-for="product in products" :key="product.id">
+            <CardProduct :product="product" />
+          </div>
+        </div>
+
       </div>
     </div>
+
 
 
     <Footer />
@@ -58,13 +77,32 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
+import CardProduct from "@/components/CardProduct.vue";
+import axios from "axios";
 
 export default {
   name: "HomeView",
   components: {
     Navbar,
     Footer,
+    CardProduct,
   },
+  data() {
+    return {
+      products: []
+    }
+  },
+  methods: {
+    setProduct(data) {
+      this.products = data;
+    }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:3000/best-cakes')
+      .then((response) => this.setProduct(response.data))
+      .catch((error) => console.log("Fail : ", error))
+  }
 };
 </script>
 
@@ -77,5 +115,11 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 75vh;
+}
+
+.body2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 78vh;
 }
 </style>
