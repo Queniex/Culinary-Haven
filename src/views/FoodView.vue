@@ -1,6 +1,17 @@
 <template>
-    <div class="container">
-      <h1 class="text-center">It's Food Page</h1>
-    </div>
-  </template>
-  
+  <div class="food">
+    <Navbar />
+    <h1>Food</h1>
+  </div>
+</template>
+
+<script>
+import Navbar from "@/components/Navbar.vue";
+
+export default {
+  name: "FoodView",
+  components: {
+    Navbar,
+  },
+};
+</script>
