@@ -15,7 +15,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand fw-bold fs-3" href="#">•CULINARY HAVEN•</a>
+          <a class="navbar-brand fw-bold fs-3" href="#">CULINARY HAVEN</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <router-link class="nav-link" to="/">Home</router-link>
