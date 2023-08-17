@@ -1,4 +1,4 @@
-# test-project
+# Culinary Haven
 
 ## Project setup
 ```
