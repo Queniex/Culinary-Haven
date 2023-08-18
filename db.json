@@ -81,6 +81,22 @@
             "price": 4,
             "status": "ready",
             "picture": "cake6.jpg"
+        },
+        {
+            "id": 7,
+            "code": "C-07",
+            "label": "Cake 7",
+            "price": 5.2,
+            "status": "ready",
+            "picture": "cake10.jpg"
+        },
+        {
+            "id": 8,
+            "code": "C-08",
+            "label": "Cake 8",
+            "price": 3,
+            "status": "ready",
+            "picture": "cake11.jpg"
         }
     ],
     "cart":[],

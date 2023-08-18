@@ -3,15 +3,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container d-flex">
       <div class="p-2 flex-grow-1">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,13 +17,7 @@
               <router-link class="nav-link" to="/foods">Foods</router-link>
             </li>
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Other
               </a>
               <ul class="dropdown-menu">
@@ -40,9 +27,7 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <router-link class="nav-link" to="/about"
-                    >About Us</router-link
-                  >
+                  <router-link class="dropdown-item text-dark" to="/about">About Us</router-link>
                 </li>
               </ul>
             </li>
