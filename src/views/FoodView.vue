@@ -5,7 +5,7 @@
       <div class="mx-2">
         <div class="row">
           <div class="col-4">
-            <h3>List of <span class="text-success">Foods</span></h3>
+            <h3>List of <span class="text-success">Cakes</span></h3>
           </div>
           <div class="col">
             <div class="input-group mb-3">

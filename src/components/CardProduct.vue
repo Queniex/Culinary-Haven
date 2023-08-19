@@ -7,7 +7,9 @@
                 <h5 class="card-title">{{ product.label }}</h5>
                 <p class="card-text">Price : <span class="text-success">${{ product.price }}</span></p>
                 <hr>
-                <a href="#" class="btn btn-success"><i class="fa fa-shopping-cart text-white"></i> Order</a>
+                <router-link :to="'/foods/' + product.id" class="btn btn-success"><i
+                        class="fa fa-shopping-cart text-white"></i>
+                    Order</router-link>
             </div>
         </div>
     </div>

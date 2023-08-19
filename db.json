@@ -6,7 +6,7 @@
             "label": "Cake 1",
             "price": 3,
             "status": "ready",
-            "picture": "cake1.jpg"
+            "picture": "5.png"
         },
         {
             "id": 2,
@@ -14,7 +14,7 @@
             "label": "Cake 2",
             "price": 3.5,
             "status": "ready",
-            "picture": "cake2.jpg"
+            "picture": "6.png"
         },
         {
             "id": 4,
@@ -22,7 +22,7 @@
             "label": "Cake 4",
             "price": 2.7,
             "status": "ready",
-            "picture": "cake4.jpg"
+            "picture": "8.png"
         },
         {
             "id": 6,
@@ -30,7 +30,7 @@
             "label": "Cake 6",
             "price": 4,
             "status": "ready",
-            "picture": "cake6.jpg"
+            "picture": "10.png"
         }
     ],
     "all-cakes": [
@@ -40,7 +40,7 @@
             "label": "Cake 1",
             "price": 3,
             "status": "ready",
-            "picture": "cake1.jpg"
+            "picture": "5.png"
         },
         {
             "id": 2,
@@ -48,7 +48,7 @@
             "label": "Cake 2",
             "price": 3.5,
             "status": "ready",
-            "picture": "cake2.jpg"
+            "picture": "6.png"
         },
         {
             "id": 3,
@@ -56,7 +56,7 @@
             "label": "Cake 3",
             "price": 3.5,
             "status": "ready",
-            "picture": "cake3.jpg"
+            "picture": "7.png"
         },
         {
             "id": 4,
@@ -64,7 +64,7 @@
             "label": "Cake 4",
             "price": 2.7,
             "status": "ready",
-            "picture": "cake4.jpg"
+            "picture": "8.png"
         },
         {
             "id": 5,
@@ -72,7 +72,7 @@
             "label": "Cake 5",
             "price": 4.2,
             "status": "ready",
-            "picture": "cake5.jpg"
+            "picture": "9.png"
         },
         {
             "id": 6,
@@ -80,7 +80,7 @@
             "label": "Cake 6",
             "price": 4,
             "status": "ready",
-            "picture": "cake6.jpg"
+            "picture": "10.png"
         },
         {
             "id": 7,
@@ -88,7 +88,7 @@
             "label": "Cake 7",
             "price": 5.2,
             "status": "ready",
-            "picture": "cake10.jpg"
+            "picture": "11.png"
         },
         {
             "id": 8,
@@ -96,7 +96,7 @@
             "label": "Cake 8",
             "price": 3,
             "status": "ready",
-            "picture": "cake11.jpg"
+            "picture": "12.png"
         }
     ],
     "cart":[],

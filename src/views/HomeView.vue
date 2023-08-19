@@ -27,7 +27,7 @@
 
           <div class="row mt-4">
             <div class="col">
-              <h2 class="mx-3">Recommended <span class="fw-bolder text-success">Food</span>
+              <h2 class="mx-3">Recommended <span class="fw-bolder text-success">Cakes</span>
                 <router-link class="btn btn-success float-end" to="/foods"><i class='fa fa-list-ul'></i> More
                   List</router-link>
               </h2>
@@ -37,11 +37,13 @@
             </div>
           </div>
 
-          <div class="row mb-3">
-            <div class="col-md-3 mt-4" v-for="product in products" :key="product.id">
-              <CardProduct :product="product" />
+          <center>
+            <div class="row mb-3">
+              <div class="col-md-3 mt-4" v-for="product in products" :key="product.id">
+                <CardProduct :product="product" />
+              </div>
             </div>
-          </div>
+          </center>
         </div>
 
         <!-- Mobile -->
@@ -70,7 +72,6 @@
                 <router-link class="btn btn-success float-end" to="/foods"><i class='fa fa-list-ul'></i> More
                   List</router-link>
               </h2>
-              <hr>
             </div>
           </div>
           <center>
