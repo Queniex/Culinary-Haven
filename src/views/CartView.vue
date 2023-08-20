@@ -58,17 +58,18 @@
 
                             <div class="row justify-content-end">
                                 <div class="col-md-4">
-                                    <form class="">
+                                    <form v-on:submit.prevent autocomplete="on">
                                         <div class="form-group">
-                                            <label for="quantity">Costumer Name : </label>
-                                            <input id="quantity" type="text" class="form-control mb-1"
-                                                v-model="order.Name" />
+                                            <label for="name">Costumer Name : </label>
+                                            <input autocomplete="off" id="name" type="text" class="form-control mb-1"
+                                                v-model="order.name" />
                                         </div>
                                         <div class="form-group mt-3">
-                                            <label for="quantity">Number of Table : </label>
-                                            <input id="quantity" type="number" class="form-control" v-model="order.Table" />
+                                            <label for="table">Number of Table : </label>
+                                            <input autocomplete="off" id="table" type="number" class="form-control"
+                                                v-model="order.table" />
                                         </div>
-                                        <button class="btn btn-success my-2 float-end" @click="checkout">
+                                        <button class="btn btn-success my-2 float-end" type="submit" @click="checkout">
                                             CheckOut</button>
                                     </form>
                                 </div>
@@ -125,7 +126,46 @@ export default {
                 .catch((error) => console.log("Fail : ", error));
         },
         checkout() {
+            // console.log("pesan", this.order.name);
+            if (this.cart.length > 0) {
+                if (this.order.name && this.order.table) {
+                    this.order.products = this.cart;
+                    axios
+                        .post('http://localhost:3000/order', this.order)
+                        .then(() => {
 
+                            // Clear the cart
+                            this.cart.map(function (item) {
+                                return axios
+                                    .delete('http://localhost:3000/cart/' + item.id)
+                                    .catch((error) => console.log("Fail : ", error));
+                            });
+
+                            // refresh page
+                            axios
+                                .get('http://localhost:3000/cart')
+                                .then((response) => this.setCart(response.data))
+                                .catch((error) => console.log("Fail : ", error));
+
+                            this.$router.push({ path: "/order/" });
+                            Vue.$toast.open({
+                                message: "Successfully checkout!",
+                                type: 'success'
+                            });
+                        })
+                        .catch((error) => console.log(error));
+                } else {
+                    Vue.$toast.open({
+                        message: "Field can't be empty!",
+                        type: 'error'
+                    });
+                }
+            } else {
+                Vue.$toast.open({
+                    message: "Chart can't be empty!",
+                    type: 'error'
+                });
+            }
         }
     },
     mounted() {
