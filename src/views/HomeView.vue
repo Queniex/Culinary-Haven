@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6">
               <div class="d-flex justify-content-center">
-                <img src="https://i.postimg.cc/bYKfGfnz/watering-plant-4.png" alt="" class="w-75 h-max ml-5">
+                <img src="../assets/images/eat2.png" alt="" class="w-50 h-max ml-5">
               </div>
             </div>
           </div>
@@ -49,11 +49,7 @@
         <!-- Mobile -->
         <div class="body2 d-sm-block d-md-none">
           <div class="row align-items-start">
-            <div class="col-md-6 mt-3">
-              <div class="d-flex justify-content-center ml-5">
-                <img src="https://i.postimg.cc/bYKfGfnz/watering-plant-4.png" alt="" class="w-75 h-75 ml-5">
-              </div>
-            </div>
+
             <div class="col-md-6 mt-3">
               <div class="mx-3">
                 <hr>
@@ -65,13 +61,20 @@
               </div>
               <hr>
             </div>
+            <div class="col-md-6 mt-3">
+              <div class="d-flex justify-content-center ml-5">
+                <img src="../assets/images/eat2.png" alt="" class="w-75 h-75 ml-5">
+              </div>
+            </div>
           </div>
           <div class="row mt-4">
             <div class="col">
+              <hr>
               <h2 class="mx-3">Recommended <span class="fw-bolder text-success">Food</span>
                 <router-link class="btn btn-success float-end" to="/foods"><i class='fa fa-list-ul'></i> More
                   List</router-link>
               </h2>
+              <hr>
             </div>
           </div>
           <center>

@@ -4,7 +4,16 @@
         <div class="body">
             <div class="container">
                 <div class="mx-2 mt-4 mb-4">
-                    <h1>Success Page</h1>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 mt-3">
+                            <center>
+                                <div class="w-50 d-flex mt-2">
+                                    <img src="../assets/images/happy1.png" class="img-fluid" alt="">
+                                </div>
+                            </center>
+                            <h1 class="text-center">Your <span class="text-success">order</span> is on process!</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
