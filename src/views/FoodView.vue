@@ -10,7 +10,7 @@
           <div class="col">
             <div class="input-group mb-3">
               <input type="text" class="form-control search" placeholder="Insert Keyword..."
-                aria-label=" Insert Keyword..." aria-describedby="button-addon2">
+                aria-label=" Insert Keyword..." aria-describedby="button-addon2" v-model="search" @keyup="searchProduct">
               <button class="btn btn-success" type="button" id="button-addon2">Search</button>
             </div>
           </div>
@@ -44,12 +44,19 @@ export default {
   },
   data() {
     return {
-      products: []
+      products: [],
+      search: '',
     }
   },
   methods: {
     setProduct(data) {
       this.products = data;
+    },
+    searchProduct() {
+      axios
+        .get('http://localhost:3000/all-cakes?q=' + this.search)
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log("Fail : ", error))
     }
   },
   mounted() {

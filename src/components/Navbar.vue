@@ -38,11 +38,11 @@
       <div class="p-2">
         <!-- Badge -->
         <div class="nav-item text-secondary">
-          <a class="nav-link" href="#">
+          <router-link class="nav-link" to="/cart">
             <span>Shopping Cart</span>
-            <span class="badge badge-pill bg-success mx-2">0</span>
+            <span class="badge badge-pill bg-success mx-2">{{ updateCart ? updateCart.length : order.length }}</span>
             <span><i class="fa fa-shopping-cart text-white"></i></span>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
@@ -56,11 +56,27 @@
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Navbar",
-  props: {
-    msg: String,
+  props: ['updateCart'],
+  data() {
+    return {
+      order: {}
+    }
   },
+  methods: {
+    setOrder(data) {
+      this.order = data;
+    }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:3000/cart')
+      .then((response) => this.setOrder(response.data))
+      .catch((error) => console.log("Fail : ", error))
+  }
 };
 </script>
