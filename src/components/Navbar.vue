@@ -27,7 +27,7 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <router-link class="dropdown-item text-dark" to="/about">About Us</router-link>
+                  <router-link class="dropdown-item text-dark" to="/about">About me</router-link>
                 </li>
               </ul>
             </li>
