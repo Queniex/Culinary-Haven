@@ -27,7 +27,7 @@
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Total</th>
-                                        <th scope="col">Delete</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -134,23 +134,17 @@ export default {
                         .post('http://localhost:3000/order', this.order)
                         .then(() => {
 
-                            // Clear the cart
-                            this.cart.map(function (item) {
-                                return axios
-                                    .delete('http://localhost:3000/cart/' + item.id)
-                                    .catch((error) => console.log("Fail : ", error));
-                            });
-
-                            // refresh page
-                            axios
-                                .get('http://localhost:3000/cart')
-                                .then((response) => this.setCart(response.data))
-                                .catch((error) => console.log("Fail : ", error));
-
-                            this.$router.push({ path: "/order/" });
-                            Vue.$toast.open({
-                                message: "Successfully checkout!",
-                                type: 'success'
+                            Promise.all(this.cart.map(function (item) {
+                                return axios.delete('http://localhost:3000/cart/' + item.id);
+                            })).then(() => {
+                                this.$router.push({ path: "/order/" });
+                                this.cart = []; // Atur ulang keranjang menjadi array kosong
+                                Vue.$toast.open({
+                                    message: "Successfully checkout!",
+                                    type: 'success'
+                                });
+                            }).catch((error) => {
+                                console.log("Fail : ", error);
                             });
                         })
                         .catch((error) => console.log(error));
